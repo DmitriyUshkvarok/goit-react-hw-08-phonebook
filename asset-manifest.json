@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.fa7ac0b1.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.ec7a9350.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.f43bbcb4.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d451515b.js",
+    "static/css/750.d7f17a75.chunk.css": "/goit-react-hw-08-phonebook/static/css/750.d7f17a75.chunk.css",
+    "static/js/750.8ca748b8.chunk.js": "/goit-react-hw-08-phonebook/static/js/750.8ca748b8.chunk.js",
+    "static/js/551.85f507f1.chunk.js": "/goit-react-hw-08-phonebook/static/js/551.85f507f1.chunk.js",
     "static/media/wallpaperbetter.com_2560x1080.jpg": "/goit-react-hw-08-phonebook/static/media/wallpaperbetter.com_2560x1080.d68bd6801fe1e1f708e5.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.fa7ac0b1.css.map": "/goit-react-hw-08-phonebook/static/css/main.fa7ac0b1.css.map",
-    "main.ec7a9350.js.map": "/goit-react-hw-08-phonebook/static/js/main.ec7a9350.js.map"
+    "main.f43bbcb4.css.map": "/goit-react-hw-08-phonebook/static/css/main.f43bbcb4.css.map",
+    "main.d451515b.js.map": "/goit-react-hw-08-phonebook/static/js/main.d451515b.js.map",
+    "750.d7f17a75.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/750.d7f17a75.chunk.css.map",
+    "750.8ca748b8.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/750.8ca748b8.chunk.js.map",
+    "551.85f507f1.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/551.85f507f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa7ac0b1.css",
-    "static/js/main.ec7a9350.js"
+    "static/css/main.f43bbcb4.css",
+    "static/js/main.d451515b.js"
   ]
 }
