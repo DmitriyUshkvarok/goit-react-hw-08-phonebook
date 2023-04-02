@@ -7,7 +7,6 @@ const Header = () => {
     <>
       <StyledHeader>
         <Container>
-          <h1>ghbdtn vbh</h1>
           <Navigation />
         </Container>
       </StyledHeader>
