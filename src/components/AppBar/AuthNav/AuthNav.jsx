@@ -1,10 +1,9 @@
-import { NavigateLink, StyleNavLink } from './Navigation.styled';
+import { NavigateLink, StyleNavLink } from './AuthNav.styled';
 
-const Navigation = () => {
+const AuthNav = () => {
   return (
     <>
       <NavigateLink>
-        <StyleNavLink to="/home">Home</StyleNavLink>
         <StyleNavLink to="/registration">Registration</StyleNavLink>
         <StyleNavLink to="/log-in">Log In</StyleNavLink>
       </NavigateLink>
@@ -12,4 +11,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default AuthNav;

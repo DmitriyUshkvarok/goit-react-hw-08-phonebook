@@ -10,10 +10,10 @@ export const StyleNavLink = styled(NavLink)`
   color: aqua;
 
   & > ${NavLink}:nth-of-type(1) {
-    margin-right: auto;
+    margin-left: auto;
   }
 
-  & > ${NavLink}:nth-of-type(2) {
+  & > ${NavLink}:nth-of-type(1) {
     margin-right: 10px;
   }
 `;

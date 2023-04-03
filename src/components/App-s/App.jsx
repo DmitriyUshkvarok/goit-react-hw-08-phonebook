@@ -8,14 +8,17 @@ const RegistrationPage = lazy(() =>
 );
 const LoginForm = lazy(() => import('../../pages/LogInPage/LogInPage'));
 
+const ContactPage = lazy(() => import('../../pages/ContactPage/ContactPage'));
+
 function App() {
   return (
     <>
       <Header />
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>
-          <Route path="home" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="registration" element={<RegistrationPage />}></Route>
+          <Route path="contacts" element={<ContactPage />}></Route>
           <Route path="log-in" element={<LoginForm />}></Route>
         </Routes>
       </Suspense>
