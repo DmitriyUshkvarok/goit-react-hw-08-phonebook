@@ -7,7 +7,7 @@ export const NavigateLink = styled.nav`
 
 export const StyleNavLink = styled(NavLink)`
   text-transform: uppercase;
-  color: aqua;
+  color: var(--color);
 
   & > ${NavLink}:nth-of-type(1) {
     margin-left: auto;

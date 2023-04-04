@@ -2,12 +2,14 @@
 import { FcCellPhone } from 'react-icons/fc';
 import css from './ContactItem.module.css';
 import { useDeleteContactMutation } from 'redux/contactApi';
+import { toast } from 'react-toastify';
 
 function ContactItem({ id, name, phone }) {
   const [deleteContact] = useDeleteContactMutation();
 
   const deleteSelectedContact = id => {
     deleteContact(id);
+    toast.error(`Failed to add ${name} to the contact list.`);
   };
 
   return (

@@ -1,8 +1,19 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import authOperations from 'redux/auth/auth-operation';
 import * as yup from 'yup';
-import css from './LoginForm.style.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  FormRegistrationLogin,
+  FormRegistrationTitleLogin,
+  FeedbackFormGroupLogin,
+  InputValueLogin,
+  BtnwrapperLogin,
+  BtnRegisterLogin,
+  ErrorRegisterMassegeLogin,
+} from './LoginForm.styled';
+import { toast } from 'react-toastify';
+import authSelector from 'redux/auth/auth-selector';
+import { useEffect } from 'react';
 
 const initialValues = {
   email: '',
@@ -15,8 +26,17 @@ const schema = yup.object().shape({
 });
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(authOperations.logIn(values));
+  const userName = useSelector(authSelector.getName);
+
+  useEffect(() => {
+    if (userName) {
+      toast.success(`Hi ${userName}`);
+    }
+  }, [userName]);
+
+  const handleSubmit = async (values, { resetForm }) => {
+    await dispatch(authOperations.logIn(values));
+    // toast.success(`Hi ${userName}`);
     resetForm();
   };
   return (
@@ -25,32 +45,24 @@ const LoginForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form className={css.formRegistration}>
-        <h2 className={css.formLogInTitle}>Form Log In</h2>
-        <div className={css.feedbackFormGroup}>
-          <Field
-            className={css.inputEmail}
-            type="email"
-            name="email"
-            placeholder="email"
-          />
-          <ErrorMessage name="email" />
-        </div>
-        <div className={css.feedbackFormGroup}>
-          <Field
-            className={css.inputPassword}
+      <FormRegistrationLogin>
+        <FormRegistrationTitleLogin>Form Log In</FormRegistrationTitleLogin>
+        <FeedbackFormGroupLogin>
+          <InputValueLogin type="email" name="email" placeholder="email" />
+          <ErrorRegisterMassegeLogin name="email" />
+        </FeedbackFormGroupLogin>
+        <FeedbackFormGroupLogin>
+          <InputValueLogin
             type="password"
             name="password"
             placeholder="password"
           />
-          <ErrorMessage name="password" />
-        </div>
-        <div className={css.btnwrapper}>
-          <button className={css.btnRegister} type="submit">
-            Log In
-          </button>
-        </div>
-      </Form>
+          <ErrorRegisterMassegeLogin name="password" />
+        </FeedbackFormGroupLogin>
+        <BtnwrapperLogin>
+          <BtnRegisterLogin type="submit">Log In</BtnRegisterLogin>
+        </BtnwrapperLogin>
+      </FormRegistrationLogin>
     </Formik>
   );
 };

@@ -1,8 +1,16 @@
-import css from './RegistrationForm.style.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operation';
+import {
+  FormRegistration,
+  FormRegistrationTitle,
+  FeedbackFormGroup,
+  InputValue,
+  Btnwrapper,
+  BtnRegister,
+  ErrorRegisterMassege,
+} from './RegistrationForm.styled.js';
 
 const initialValues = {
   name: '',
@@ -29,41 +37,24 @@ const RegistrationForm = () => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form className={css.formRegistration}>
-        <h2 className={css.formRegistrationTitle}>Form Registration</h2>
-        <div className={css.feedbackFormGroup}>
-          <Field
-            className={css.inputName}
-            type="text"
-            name="name"
-            placeholder="name"
-          />
-          <ErrorMessage name="name" />
-        </div>
-        <div className={css.feedbackFormGroup}>
-          <Field
-            className={css.inputEmail}
-            type="email"
-            name="email"
-            placeholder="email"
-          />
-          <ErrorMessage name="email" />
-        </div>
-        <div className={css.feedbackFormGroup}>
-          <Field
-            className={css.inputPassword}
-            type="password"
-            name="password"
-            placeholder="password"
-          />
-          <ErrorMessage name="password" />
-        </div>
-        <div className={css.btnwrapper}>
-          <button className={css.btnRegister} type="submit">
-            Registration
-          </button>
-        </div>
-      </Form>
+      <FormRegistration>
+        <FormRegistrationTitle>Form Registration</FormRegistrationTitle>
+        <FeedbackFormGroup>
+          <InputValue type="text" name="name" placeholder="name" />
+          <ErrorRegisterMassege name="name" />
+        </FeedbackFormGroup>
+        <FeedbackFormGroup>
+          <InputValue type="email" name="email" placeholder="email" />
+          <ErrorRegisterMassege name="email" />
+        </FeedbackFormGroup>
+        <FeedbackFormGroup>
+          <InputValue type="password" name="password" placeholder="password" />
+          <ErrorRegisterMassege name="password" />
+        </FeedbackFormGroup>
+        <Btnwrapper>
+          <BtnRegister type="submit">Registration</BtnRegister>
+        </Btnwrapper>
+      </FormRegistration>
     </Formik>
   );
 };

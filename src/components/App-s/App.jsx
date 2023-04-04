@@ -1,6 +1,11 @@
 import Header from 'components/Header/Header';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
+import authOperations from 'redux/auth/auth-operation';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() =>
@@ -11,8 +16,15 @@ const LoginForm = lazy(() => import('../../pages/LogInPage/LogInPage'));
 const ContactPage = lazy(() => import('../../pages/ContactPage/ContactPage'));
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.refreshCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
+      <ToastContainer />
       <Header />
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>

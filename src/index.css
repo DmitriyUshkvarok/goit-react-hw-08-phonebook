@@ -8,9 +8,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./img/wallpaperbetter.com_2560x1080.jpg);
+  /* background-image: url(./img/wallpaperbetter.com_2560x1080.jpg); */
+  background: var(--background-body);
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+body[data-theme='dark'] {
+  --background-body: linear-gradient(to left, #83a4d4, #b6fbff);
+  --background-header: linear-gradient(to right, #efefbb, #d4d3dd);
+  --background-movies-item: linear-gradient(to right, #efefbb, #d4d3dd);
+  --color: rgb(41, 28, 28);
+  --border-color: gray;
+  --transition: 0.4s;
+  --box-shadow-header: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  --hover-color-text: rgb(42, 155, 155);
+}
+
+body[data-theme='light'] {
+  --background-body: linear-gradient(to right, #360033, #0b8793);
+  --background-header: linear-gradient(to right, #414345, #232526);
+  --background-movies-item: linear-gradient(to right, #414345, #232526);
+  --color: aqua;
+  --border-color: aqua;
+  --transition: 0.4s;
+  --box-shadow-header: 0px 2px 8px rgba(10, 216, 244, 0.4);
+  --hover-color-text: rgb(115, 87, 87);
 }
 
 code {
