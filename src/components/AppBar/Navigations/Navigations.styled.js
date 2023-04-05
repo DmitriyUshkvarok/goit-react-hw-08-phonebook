@@ -18,6 +18,6 @@ export const MainLink = styled(Link)`
   transition: color 0.4s;
 
   &:hover {
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--hover-color-text);
   }
 `;

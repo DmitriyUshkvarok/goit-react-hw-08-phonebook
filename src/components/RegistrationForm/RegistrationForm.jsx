@@ -26,8 +26,9 @@ const schema = yup.object().shape({
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (values, { resetForm }) => {
-    dispatch(authOperations.register(values));
+
+  const handleSubmit = async (values, { resetForm }) => {
+    await dispatch(authOperations.register(values));
     resetForm();
   };
 

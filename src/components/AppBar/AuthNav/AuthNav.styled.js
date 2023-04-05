@@ -9,11 +9,12 @@ export const StyleNavLink = styled(NavLink)`
   text-transform: uppercase;
   color: var(--color);
 
-  & > ${NavLink}:nth-of-type(1) {
+  &:nth-of-type(1) {
     margin-left: auto;
+    margin-right: 10px;
   }
 
-  & > ${NavLink}:nth-of-type(1) {
+  &:nth-of-type(2) {
     margin-right: 10px;
   }
 `;

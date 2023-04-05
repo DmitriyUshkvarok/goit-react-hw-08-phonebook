@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function ContactForm() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const [createContact, { isLoading }] = useCreateContactMutation();
   const { data: contacts } = useGetContactsQuery();
@@ -18,7 +18,7 @@ function ContactForm() {
     const existingContact = contacts?.find(
       contact =>
         contact.name.toLowerCase() === name.toLowerCase() &&
-        contact.phone === phone
+        contact.phone === number
     );
 
     if (existingContact) {
@@ -26,11 +26,11 @@ function ContactForm() {
       return;
     }
 
-    createContact({ name, phone })
+    createContact({ name, number })
       .then(() => {
         toast.success(`${name} is added to the contact list.`);
         setName('');
-        setPhone('');
+        setNumber('');
       })
       .catch(() => {
         toast.error(`Failed to add ${name} to the contact list.`);
@@ -42,7 +42,7 @@ function ContactForm() {
   };
 
   const handlePhoneChange = event => {
-    setPhone(event.target.value);
+    setNumber(event.target.value);
   };
 
   return (
@@ -67,7 +67,7 @@ function ContactForm() {
           Number
           <input
             className={css.inputNumber}
-            value={phone}
+            value={number}
             onChange={handlePhoneChange}
             placeholder="number"
             type="tel"

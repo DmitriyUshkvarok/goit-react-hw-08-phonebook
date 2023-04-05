@@ -36,7 +36,6 @@ const LoginForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     await dispatch(authOperations.logIn(values));
-    // toast.success(`Hi ${userName}`);
     resetForm();
   };
   return (
